@@ -1,6 +1,5 @@
-Flask==1.1.2   
-Jinja2==2.11.3
-joblib==1.0.0
+Flask==1.1.2
+gunicorn==19.9.0   
 jsonify==0.5 
 Keras-Preprocessing==1.1.2
 matplotlib==3.3.2 
