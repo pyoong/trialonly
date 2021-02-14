@@ -71,7 +71,6 @@ olefile==0.46
 openpyxl==3.0.6
 opt-einsum==3.3.0
 packaging==20.9
-pandas==1.2.1
 pandocfilters==1.4.3
 paramiko==2.7.2
 parso==0.7.0
