@@ -593,7 +593,7 @@ from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense  #, Activation,Layer,Lambda
 
-attrdata1 = pd.read_csv("C:/Users/HP/Documents/My Documents 1/Cert in Data Science Course/Attrition Project/NS/Trial 8 KNC/Data/ModelFinal.csv")
+attrdata1 = pd.read_csv("C:/Users/HP/Documents/My Documents 1/Cert in Data Science Course/Attrition Project/NS/trialtrialtrial/Data/ModelFinal.csv")
 X = attrdata1.iloc[:, 1:]
 y = attrdata1['Cluster']
 
@@ -638,6 +638,52 @@ hiddenWeights = model.layers[hiddenLayer].get_weights()
 lastWeights = model.layers[lastLayer].get_weights()
 
 
+
+# Hyperparameter tuning by GridSearchCV
+#import required libraries
+import pandas as pd #to manipulate data
+import numpy as np #linear algebra
+from sklearn.model_selection import train_test_split #to split data into train and test set
+from sklearn.preprocessing import StandardScaler #to scale data
+from keras.models import Sequential #to define model
+from keras.layers import Dense #to add layers into model
+from keras.wrappers.scikit_learn import KerasClassifier
+from sklearn.model_selection import GridSearchCV #to find best parameters
+
+attrdata1 = pd.read_csv("C:/Users/HP/Documents/My Documents 1/Cert in Data Science Course/Attrition Project/NS/trialtrialtrial/Data/ModelFinal.csv")
+X = attrdata1.iloc[:, 1:].values  # same as X=np.array(attrdata1.iloc[:, 1:])
+y = attrdata1['Cluster'].values   # same as y=np.array(attrdata1.iloc[:, 0])
+
+#  Splitting the data into train and test data
+from sklearn.model_selection import train_test_split
+X_train,X_test,y_train,y_test = train_test_split(X,y, test_size=0.3, random_state=10)
+
+def build_model(optimizer):
+    clf = Sequential()
+    clf.add(Dense(units=18, activation='relu', input_dim=12))
+    clf.add(Dense(units=18, activation='relu'))
+    clf.add(Dense(units=1, activation='sigmoid'))
+    clf.compile(optimizer = optimizer, loss='binary_crossentropy', metrics=['accuracy'])
+    return model
+
+# Create the object of KerasClassifier class
+clf = KerasClassifier(build_fn=build_model)
+
+# Create the dictionary of the parameters
+parameters = {'batch_size': [10, 25, 32],
+              'epochs': [25, 100],
+              'optimizer': ['adam', 'rmsprop']}
+grid_search = GridSearchCV(estimator = clf, param_grid=parameters, scoring='accuracy', cv=10)
+
+# Fit the model
+grid_search = grid_search.fit(X_train, y_train)
+
+best_parameters = grid_search.best_params_
+best_accuracy = grid_search.best_score_
+print("Best parameters: ", best_parameters)
+print("Best score: ", best_accuracy)   # 56.27%
+
+    
 ###############################################################################################
 
 
@@ -728,7 +774,6 @@ knn_grid.best_params_
 
 
 ###############################################################################################
-
 
 
 
