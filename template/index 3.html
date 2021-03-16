@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attrition Analytics</title>
+    <link rel="stylesheet" href="C:\Users\HP\Documents\My Documents 1\Cert in Data Science Course\Attrition Project\NS\trialtrialtrial\Html\attrstyles.css">
+</head>
+
+<body>
+<div>    
+<form action="{{ url_for('predict')}}" method="post">
+  <h2>Employee Attrition Analysis</h2>
+  
+  <label for="Salary">Salary (from 16000 to 85000)</label><br><br>
+  <input type="number" id="Salary" name="Salary" min="16000" max="85000"><br><br>
+
+  <label for="LastSalaryHike">Last Salary Hike (from 5 to 20)</label><br><br>
+  <input type="number" id="LastSalaryHike" name="LastSalaryHike" min="5" max="20"><br><br>
+
+  <label for="TotalWorkExperience">Total work experience (from 0.1 to 25.0) : 1 decimal point (e.g. 3.5)</label><br><br>
+  <input type="number" id="TotalWorkExperience" name="TotalWorkExperience" min="0.1" max="25.0"><br><br>
+
+  <label for="AdaptabilityandInitiative">Adaptability and initiative (from 1 to 5)</label><br><br>
+  <input type="number" id="AdaptabilityandInitiative name="AdaptabilityandInitiative min="1" max="5"><br><br>
+
+  <label for="LeadershipSkills">Leadership skills (from 1 to 5)</label><br><br>
+  <input type="number" id="LeadershipSkills" name="LeadershipSkills" min="1" max="5"><br><br>
+  
+  <label for="QualityofDeliverables">Quality of deliverables (from 1 to 5)</label><br><br>
+  <input type="number" id="QualityofDeliverables name="QualityofDeliverables" min="1" max="5"><br><br>
+
+  <label for="JudgementandDecisionMaking">Judgement and decision making (from 1 to 5)</label><br><br>
+  <input type="number" id="JudgementandDecisionMaking" name="JudgementandDecisionMaking" min="1" max="5"><br><br>
+
+  <label for="TeamWorkSkills">Team work skills (from 1 to 5)</label><br><br>
+  <input type="number" id="TeamWorkSkills" name="TeamWorkSkills" min="1" max="5"><br><br>
+  
+  <label for="CustomerRelationSkills">Customer relation skills (from 1 to 5)</label><br><br>
+  <input type="number" id="CustomerRelationSkills" name="CustomerRelationSkills" min="1" max="5"><br><br>
+
+  <label for="JobKnowledge">Job knowledge (from 1 to 5)</label><br><br>
+  <input type="number" id="JobKnowledge" name="JobKnowledge" min="1" max="5"><br><br>
+
+  <label for="ReliabilityandDependability">Reliability and dependability (from 1 to 5)</label><br><br>
+  <input type="number" id="ReliabilityandDependability" name="ReliabilityandDependability" min="1" max="5"><br><br><br>
+  
+  <input style="font-size: 15px; width:100px; background-color:cyan;" type="submit" value="Prediction">
+
+</form>
+
+<h3 style="color: beige;">{{ prediction_texts }}</h3>
+
+</div>
+
+<table style="width:30%;">
+    <tr>
+        <th colspan="2">CLASS</th>
+    </tr>
+    <tr>
+        <td>Class 0</td>
+        <td>Permanent employee</td>
+    </tr>
+    <tr>
+        <td>Class 1</td>
+        <td>Temporary employee</td>
+    </tr>
+    <tr>
+        <td>Class 2</td>
+        <td>Predicted to leave the company</td>
+    </tr>
+    <tr>
+        <td>Class 3</td>
+        <td>Contractual employee</td>
+    </tr>
+</table>
+
+
+
+</body
+</html>
+

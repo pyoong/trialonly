@@ -12,58 +12,34 @@
     <div style="color:white">
         <form action="{{ url_for('predict')}}" method="post">
             <h2>Employee Attrition Analysis</h2>
-            <h3>Salary</h3><input id="second" name="Salary" required="required">
-            <h3>Last salary hike</h3><input id="second" name="LastSalaryHike" required="required">
-            <h3>Total work experience : 1 decimal point (e.g. 3.5)</h3><input id="second" name="TotalWorkExperience" required="required">
-            <h3>Adaptability and initiative (from 1 to 5)</h3><input id="second" name="AdaptabilityandInitiative" required="required">
-            <h3>Attendance and punctuality (from 1 to 5)</h3><input id="second" name="AttendanceandPunctuality" required="required">
-            <h3>Leadership skills (from 1 to 5)</h3><input id="second" name="LeadershipSkills" required="required">
-            <h3>Quality of deliverables (from 1 to 5)</h3><input id="second" name="QualityofDeliverables" required="required">
-            <h3>Judgement and decision making (from 1 to 5)</h3><input id="second" name="JudgementandDecisionMaking" required="required">
-            <h3>Team work skills (from 1 to 5)</h3><input id="second" name="TeamWorkSkills" required="required">
-            <h3>Customer relation skills (from 1 to 5)</h3><input id="second" name="CustomerRelationSkills" required="required">
-            <h3>Job knowledge (from 1 to 5)</h3><input id="second" name="JobKnowledge" required="required">
-            <h3>Reliability and dependability (from 1 to 5)</h3><input id="second" name="ReliabilityandDependability" required="required">
-            <br><br><button id="sub" type="submit">Prediction</button>
+            <h3>Salary</h3><br>
+            <input id="first" name="Salary" required="required">
+            <h3>Last salary hike</h3><br>
+            <input id="second" name="LastSalaryHike" required="required">
+            <h3>Total work experience : 1 decimal point (e.g. 3.5)</h3><br>
+            <input id="third" name="TotalWorkExperience" required="required">
+            <h3>Adaptability and initiative (from 1 to 5)</h3><br><input id="fourth" name="AdaptabilityandInitiative" required="required">
+            <h3>Attendance and punctuality (from 1 to 5)</h3><br><input id="fifth" name="AttendanceandPunctuality" required="required">
+            <h3>Leadership skills (from 1 to 5)</h3><br><input id="sixth" name="LeadershipSkills" required="required">
+            <h3>Quality of deliverables (from 1 to 5)</h3><br><input id="seventh" name="QualityofDeliverables" required="required">
+            <h3>Judgement and decision making (from 1 to 5)</h3><br><input id="eight" name="JudgementandDecisionMaking" required="required">
+            <h3>Team work skills (from 1 to 5)</h3><br><input id="ninth" name="TeamWorkSkills" required="required">
+            <h3>Customer relation skills (from 1 to 5)</h3><br><input id="tenth" name="CustomerRelationSkills" required="required">
+            <h3>Job knowledge (from 1 to 5)</h3><br><input id="eleventh" name="JobKnowledge" required="required">
+            <h3>Reliability and dependability (from 1 to 5)</h3><br><input id="twelth" name="ReliabilityandDependability" required="required">
+            <br><br><button id="sub" type="submit ">Prediction</button>
             <br>
 
 
         </form>
 
-        <br><h3>{{ prediction_texts }}<h3><br>
-
-
-            <table style="width:50%;">
-                <tr>
-                    <th colspan="2">CLASS</th>
-                </tr>
-                <tr>
-                    <td>Class 0</td>
-                    <td>Permanent employee</td>
-                </tr>
-                <tr>
-                    <td>Class 1</td>
-                    <td>Temporary employee</td>
-                </tr>
-                <tr>
-                    <td>Class 2</td>
-                    <td>Predicted to leave the company</td>
-                </tr>
-                <tr>
-                    <td>Class 3</td>
-                    <td>Contractual employee</td>
-                </tr>
-            </table>
-
-
-
-
+        <br><br><h3>{{ prediction_texts }}<h3>
     </div>
 
 
     <style>
         body {
-            background-color: slategray;
+            background-color: blue;
             text-align: center;
             padding: 0px;
         }
@@ -149,8 +125,9 @@
         }
         
         #second {
+            border-radius: 14px;
             height: 25px;
-            font-size: 13px;
+            font-size: 20px;
             text-align: center;
         }
         
